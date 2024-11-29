@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-const CustomButton = ({ text, onPress }) => {
+const CustomButton = ({ text, onPress, defaultColor = '#007bff', pressedColor = '#ff5722' }) => {
+  const [isPressed, setIsPressed] = useState(false);
+
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    <TouchableOpacity
+      style={[styles.button, { backgroundColor: isPressed ? pressedColor : defaultColor }]}
+      onPress={() => {
+        setIsPressed(true);
+        onPress();
+      }}
+    >
       <Text style={styles.buttonText}>{text}</Text>
     </TouchableOpacity>
   );
@@ -11,7 +19,6 @@ const CustomButton = ({ text, onPress }) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#007bff',
     padding: 10,
     borderRadius: 8,
     alignItems: 'center',

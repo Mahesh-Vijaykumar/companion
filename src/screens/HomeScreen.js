@@ -1,10 +1,18 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import CustomButton from '../components/CustomButton';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
+  const handleButtonPress = (buttonText) => {
+    navigation.navigate('ButtonDetails', { buttonText });
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Welcome to the Home Page!</Text>
+      <CustomButton text="Safety Score Calculation" onPress={() => handleButtonPress('Safety Score Calculation')} />
+      <CustomButton text="Interactive Safety Map" onPress={() => handleButtonPress('Interactive Safety Map')} />
+      <CustomButton text="Community Reporting System" onPress={() => handleButtonPress('Community Reporting System')} />
+      <CustomButton text="Emergency Support Features" onPress={() => handleButtonPress('Emergency Support Features')} />
     </View>
   );
 };
@@ -14,10 +22,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    padding: 20,
+    backgroundColor: '#f7f7f7',
   },
 });
 
