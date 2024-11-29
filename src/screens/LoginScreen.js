@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Alert } from 'react-native';
 import CustomButton from '../components/CustomButton';
 
-const LoginScreen = ({ navigation }) => {
+const LoginScreen = ({ navigation, onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -12,9 +12,10 @@ const LoginScreen = ({ navigation }) => {
       return;
     }
 
-    // Proceed to Home no matter the input
+    // Proceed to Home
     Alert.alert('Success', `Welcome, ${email}!`);
-    navigation.replace('Home');
+    onLogin(email);
+    navigation.replace('Drawer');
   };
 
   return (

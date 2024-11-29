@@ -13,6 +13,7 @@ const HomeScreen = ({ navigation }) => {
       <CustomButton text="Interactive Safety Map" onPress={() => handleButtonPress('Interactive Safety Map')} />
       <CustomButton text="Community Reporting System" onPress={() => handleButtonPress('Community Reporting System')} />
       <CustomButton text="Emergency Support Features" onPress={() => handleButtonPress('Emergency Support Features')} />
+      <CustomButton text="Logout" onPress={() => navigation.replace('Login')} />
     </View>
   );
 };
