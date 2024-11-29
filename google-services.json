@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "905784933186",
+    "project_id": "companion-c512c",
+    "storage_bucket": "companion-c512c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905784933186:android:d74b22027e3fce5b38a6db",
+        "android_client_info": {
+          "package_name": "com.heisee.companion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVAO7Yx_e3yORqZYkJ6D6YEXC_yxNNXGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
